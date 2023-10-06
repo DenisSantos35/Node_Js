@@ -1,0 +1,10 @@
+/*
+npm gerenciador de pacotes
+baixa biblioteca de terceiros
+executa determinados scripts
+fica na pasta node_modules
+a cada projeto baixa pacotes do zero,
+ a pasta node_module pode ser descartada sem alterar o projeto
+
+ cmder simula o terminal do linux
+*/
