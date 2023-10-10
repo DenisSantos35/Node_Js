@@ -5,7 +5,6 @@ const url = require('url')
 const port = 3000
 
 const server = http.createServer((req, res)=>{
-
     const q = url.parse(req.url, true) // pegamsos a url da requesição
     const fileName = q.pathname.substring(1) // pegamos o caminho apartir do caracter 1 da url capturada
     console.log(fileName)
