@@ -1,0 +1,11 @@
+<h2>Bem vindo á handlebars</h2>
+<p>Bom dia, senhor {{user.name}} {{user.surname}}</p>
+<p>Hoje é seu aniversário voce está fazendo {{user.age}} anos</p>
+{{#if approved}}
+<p>Parabéns, o seu cadastro foi aprovado!</p>
+{{else}}
+<p>O seu cadastro necessita de aprovação para acesso total do sistema</p>
+{{/if}}
+{{#if auth}}
+    <p>Acesse sua Home page <a href="/homePage">Clicando aqui</a></p>
+{{/if}}

@@ -1,0 +1,9 @@
+<h1>Bom dia senhor {{user.name}} {{user.surname}}</h1>
+{{#if approvad}}
+<p>Parabéns, seu cadastro foi aprovado</p>
+{{else}}
+<p>O seu cadastro necessita de aprovação para acesso total do sistema</p>
+{{/if}}
+{{#if auth}}
+<p>Você está autenticado, pra ir para a página inicial <a href="/initPage">clique aqui</a></p>
+{{/if}}

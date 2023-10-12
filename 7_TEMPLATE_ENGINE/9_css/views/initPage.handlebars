@@ -1,0 +1,7 @@
+<h1>Bom dia, bem vindo {{user.name}} á nossa Home Page</h1>
+<h3>Selecione uma opçaõ abaixo</h3>
+<ul>
+    {{#each options}}
+        <li><a href="/post">{{this}}</a></li>
+    {{/each}}
+</ul>

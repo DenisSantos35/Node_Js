@@ -1,0 +1,30 @@
+O que é uma template engine?
+
+uma forma de deixar o html dinâmico, inserindo variáveis do back end no frontend
+
+podemos tambem criar layouts, que são reaproveitaveitados
+
+é essencial para projetos que usam banco de dados, que não são estáticos
+
+temos diversos disponoveis: EJS, pug e Handlebars, por exemplo setup e funcionalidades
+
+O que é Handlebars?
+
+O Handlebars é uma template engines mais utilizadas,
+
+Colocamos os dados dinâmicos no html entre {{}} para serem impressos;
+
+Podemos criar condicionais e tambem loops no template;
+
+Conhecido pela sua sintaxe limpa no front, nos força a não executar lógica no HTML;
+
+O nome do pacote é express-Handlebars;
+
+*************************************************************************************
+Para reparar basta trocar esta linha de código:
+
+app.engine('handlebars', exphbs())
+
+Por esta:
+
+app.engine('handlebars', exphbs.engine())
