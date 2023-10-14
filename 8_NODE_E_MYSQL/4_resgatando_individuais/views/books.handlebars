@@ -1,0 +1,11 @@
+<h1>Livros Cadastrados:</h1>
+<div class="books-container">
+    <a href="/home">Voltar</a>
+    {{#each listBooks}}
+    <div >#{{this.id}} - <span class="bold"><a href="/books/{{this.id}}">Titulo: {{this.title}}</a></span> 
+    - Numero de páginas: {{this.pageqty}}</div>
+{{/each}}
+</div>
+
+
+
