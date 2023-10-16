@@ -64,4 +64,6 @@ app.get('/', async (req,res)=>{
     res.render('home', {users: users})
 })
 
-app.listen(port, ()=> console.log(`Conectado na porta: ${port}`))
+conn.sync()
+.then(()=> app.listen(port, ()=> console.log(`Conectado na porta: ${port}`)))
+.catch((err)=> console.log(err))

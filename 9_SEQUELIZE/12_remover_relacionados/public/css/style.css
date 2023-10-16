@@ -1,0 +1,154 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+#navbar{
+    width: 100vw;
+    border-bottom: 1px solid #ccc;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+#navbar ul{
+   display: flex;
+   list-style: none;
+   padding: 10px;
+   margin: 0;
+
+}
+
+#navbar ul li{
+    margin-left: 1em;
+ 
+ }
+
+h1{
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.form, nav, footer{
+    
+    width: 450px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.form-control{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .5em;
+}
+
+.form-control label{
+    font-weight: bold;
+    margin-bottom: .3em;
+}
+
+.form-control input{
+    padding: 5px;
+}
+
+.form-checkbox{
+    flex-direction: row;
+}
+
+.form-checkbox input{
+    margin-right: 5px;
+}
+
+/*USERS*/
+
+.container{
+    display: flex; /*TRABALHAR COM FLEX BOX*/
+    flex-wrap: wrap; /*COLOCAR UM AO LADO DO OUTRO*/
+    max-width: 1200px; /*quando a tela chegar a essa largura quebra os itens*/
+    margin: 0 auto; /*centraliza o componente*/
+    gap: 10px; /*afasta um item do outro em 10px*/
+}
+
+.container .item{
+    border: 1px solid #ccc; /*coloca uma borda em volta do item, sendo solida cor cinza*/
+    border-radius: 5px; /*arredonda as bordas colocadas*/
+    padding: 20px; /*espaçamento interno de 20px de cada lado*/
+    flex: 1 1 29%; /*determina uma largura de 29% da tela*/
+    max-width: 29%; /*determina para o componete 29%*/
+    /*height: 75px; largura do componente de 75px*/
+    display: flex;
+    flex-direction: column; /*coloca os itens em coluna*/
+    justify-content: space-around; /*todos se espação entre si usando o espacando da div*/ 
+}
+
+.item h2,
+.item p{
+    margin-bottom: 0.8em;
+}
+
+.actions{
+    display: flex;
+    justify-content: space-between;
+}
+
+.actions a,
+.actions input{
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    text-decoration: none;
+    background-color: #fff;
+    padding: 5px;
+    font-size: 15px;
+    color: #000;
+    cursor: pointer;
+}
+
+.actions .details-btn{
+    border-color: #004085;
+    color: #004085;
+}
+
+.actions .delete-btn{
+    border-color: #721c24;
+    color: #721c24;
+}
+
+/*ADDRESS*/
+
+.address-container{
+    max-width: 1000px; 
+    margin: 1em auto; /*espacamento de top, bottom de 1em e  os lados e centraliza na tela*/
+    padding-top: 1em; 
+    padding-bottom: 200px;
+    border-top: 1px solid #ccc;
+}
+
+.address-container h2{
+    margin-bottom: 1em;
+    color: red;
+    font-size: 16;
+}
+
+.address-container form{
+    max-width: 300px;
+}
+
+.address-list{
+    margin-top: 1em;
+    padding-top: 1em;
+    border-top: 1px solid #ccc;
+   
+}
+
+.address-list div{
+    display: flex;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #ddd;   
+}
+
+.address-list form{
+    margin-left: 1em;
+}
+
+
+
