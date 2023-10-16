@@ -1,0 +1,14 @@
+Object relational mapper(ORM)
+Abstrai a complexidade das queries, para trabalharmos com métodos;
+Nos concentramos na regra de negócio e não nos comandos SQL;
+Uma ORM muito utiliza para Node.js é a Sequelize;
+Em alguns casos uma ORM pode trazer prejuizos de performance;
+A query pura executa mais rapidamente do que ORM;
+E temos código "Gerado", ou seja, não vemos por baixo dos panos;
+
+O que é Sequelize
+Uma ORM para Node.js;
+Ela é baseada em promisses(then, catch);
+Tem integração para vários bancos relacionais, como Mysql;
+Precisamos sempre criar um Modelo, que é o reflexo da nossa tabela em uma classe;
+Precisamos instalar o pacote, já que é um módulo externo;
