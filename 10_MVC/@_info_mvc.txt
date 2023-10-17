@@ -1,0 +1,80 @@
+MVC = module view controller
+
+views,
+modules,
+controller
+
+Um acrônimo de Model View controller
+
+É um padrão de arquitetura de software, que pode deixar nossas aplicações mais organizadas;
+
+A aplicação é dividida em camadas, cada sua responsabilidade
+
+Teremos uma nova estrutura de arquivoe e pastas
+
+E a aplicação obedece um novo fluxo, que se repete para todas as açoes;
+
+Aplicaçoes em MVC tendem a ter uma manutenção/evolução mais facil
+
+View => contem os arquivos que se remetem a visualização
+Controller => Se remete mais a funcionalidade da aplicações, funcoes, classes, métodos
+Model => Se remete a banco de dados colocar nesse arquivo
+
+
+
+Camada (Model)
+
+
+
+É uma camada onde vamos interagir com o banco de dados;
+
+Normalmente interage com os arquivos do Controller;
+
+Responsavel por resgatar, atualizar, remover e criar dados;
+
+É comum que cada tabela seja um Model, assim como fazemos com o setup do Sequelize;
+
+Os models são quem controlam a arquitetura do sistema, é facil entender a regra do negócio analizando eles;
+
+
+
+Camada de visualização (view)
+
+
+
+É onde apresentamos os dados que estão no banco;
+
+Geralmente a view interage com o Controller, que é o meio de campo;
+
+E também nas views temos a interação com usuário, como formulários para inserir dados no sistema;
+
+É correto não haver lógica/regra de negócio na view, ou o mínimo possível
+
+Normalmente a exibição é feita através do HTML
+
+Camada de controle (Controller)
+
+É onde temos a interação entre Model e View
+
+Podemos definir qual view será impressa, processar dadis que foram enviados para o banco ou para a view
+
+Os controllers terao um código parecido com os das rotas que estamos criando até então
+
+
+
+
+Nossa Estrutura com MVC
+
+
+
+Nossa estrutura será composta por: 
+
+controlelers: pasta que ficam os arquivos de Controller;
+
+models: pasta que ficam os arquivos de Model;
+
+views: pasta que ficam os arquivos de view;
+
+routes: pasta que ficam arquivos de rotas;
+
+index.js: arquivo que inicializa a aplicação.
