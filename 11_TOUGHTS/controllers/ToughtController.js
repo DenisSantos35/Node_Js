@@ -2,9 +2,44 @@ const { raw } = require('express')
 const Tought = require('../models/Tought')
 const User = require('../models/User')
 
+const {Op} = require('sequelize')
+
 module.exports = class ToughtsController{
     static async showToughts(req,res){
-        res.render('toughts/home')
+        
+        let search = ''
+
+        if(req.query.search){
+            search = req.query.search
+        }
+
+        let order = 'DESC'
+        if(req.query.order === 'old'){
+            order = 'ASC'
+        }else{
+            order = 'DESC'
+        }
+
+
+       // const toughts = await Tought.findAll({raw:true})
+       const toughtsData = await Tought.findAll({
+        include: User,
+        where: {
+            title: {[Op.like]: `%${search}%`}
+        },
+        order: [['createdAt', order]]
+       })
+
+       //const toughts = toughtsData.map((result)=> result.dataValues) // aqui ele sobusca de 1 relação quando se busca mais de uma utilza-se 
+       const toughts = toughtsData.map((result)=> result.get({plain:true}))
+
+       let toughtsQty = toughts.length
+
+       if(toughts === 0){
+        toughtsQty = false
+       }
+
+        res.render('toughts/home', { toughts, search, toughtsQty })
     }
 
     static async dashboards(req,res){
@@ -25,13 +60,48 @@ module.exports = class ToughtsController{
 
         const toughts = user.Toughts.map((result)=>result.dataValues)
         //const toughts = await Tought.findAll({raw:true,where:{UserId:userId}})
-        console.log(toughts)
+        let emptyToughts = false
+        console.log(toughts.length)
 
-        res.render('toughts/dashboards', {toughts})
+        if(toughts.length === 0){
+            emptyToughts = true
+        }
+
+        res.render('toughts/dashboards', {toughts, emptyToughts})
     }
     // aqui renderizamos na tela do usuário a pagina de criação
     static createTought(req, res){
         res.render('toughts/create') //quando e render voce passa o diretorio e o arquivo
+    }
+
+    static async updateTought(req, res){
+        const id = req.params.id
+
+        const tought = await Tought.findOne({raw: true, where:{id:id}})
+
+        res.render('toughts/edit', { tought })
+    }
+
+    static async updateToughtSave(req, res){
+        const id = req.body.id
+
+        const tought = {
+            title: req.body.title
+        }
+
+        try{
+            await Tought.update(tought, {where:{id: id}})
+
+            req.flash("message", "Pensamento atualizado com sucesso!")
+
+            req.session.save(()=>{
+            res.redirect('/toughts/dashboards')
+        })
+
+        }catch(err){
+            console.log(err)
+        }
+
     }
 
     // aqui quando o usuario digita no formulario e submet capturamos o titulo que vem do body
