@@ -1,23 +1,20 @@
 const conn = require('../db/conn')
 
 class Product {
-    name
-    price
-    description
-
-    constructor(name, price, description){
+       constructor(name, price, description){
         this.name = name,
         this.price = price,
         this.description = description
     }
 
     save(){
-        const product = conn.db().collection('products').insertOne({
+        const product =  conn.db().collection('products').insertOne({
             name: this.name,
             price: this.price,
             description: this.description
         })
         return product
+       
     }
 }
 

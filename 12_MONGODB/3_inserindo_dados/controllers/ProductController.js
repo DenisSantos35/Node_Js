@@ -9,7 +9,7 @@ module.exports = class ProductController{
         res.render('products/create')
     }
 
-    static async createProductPost(req, res){
+    static createProductPost(req, res){
         const name = req.body.name
         const price = req.body.price
         const description = req.body.description
