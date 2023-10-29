@@ -34,12 +34,13 @@ module.exports = class FavoriteBooks{
         
         const livrosFavoritos = JSON.parse(fs.readFileSync("favoritebooks.json"))
 
-        const livroInserido = livros.find((livro)=> livro.id === id)  
+        const livroInserido = livros.find((livro)=> livro.id === id) 
+        console.log(livroInserido) 
         if(!livroInserido){
             res.status(501).send("dados invalidos")
             return
         }      
-        let novaListaDeLivrosFavoritos = [[...livrosFavoritos,livroInserido]]
+        let novaListaDeLivrosFavoritos = [...livrosFavoritos,livroInserido]
 
         fs.writeFileSync("favoritebooks.json", JSON.stringify(novaListaDeLivrosFavoritos))
     }
@@ -47,7 +48,8 @@ module.exports = class FavoriteBooks{
     //inserindo livro no mysql
     static insertFavoriteBookMysql(id){
         const query = `SELECT * FROM booksalura.books WHERE idbooks = ${id};`
-        console.log(query)
+        console.log(id)
+        
         let nome = ""
         let idbooks = ""
         // pega primeira query realiza

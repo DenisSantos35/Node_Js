@@ -24,15 +24,13 @@ module.exports = class Favorite {
 
     static insertFavorite(req, res) { 
         const id = req.params.id
+        
             
-        try {
+        try {           
             
-            if(id && Number(id)){
-                FavoriteBooks.insertFavoriteBook(id)
-                FavoriteBooks.insertFavoriteBookMysql(id)
-            }else{
-                res.status(422).send('ID invalido')
-            }
+            FavoriteBooks.insertFavoriteBook(id)
+            FavoriteBooks.insertFavoriteBookMysql(id) 
+          
 
             res.status(201).send(`Livro inserido com sucesso`)
 
