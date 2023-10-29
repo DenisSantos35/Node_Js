@@ -3,6 +3,7 @@ const conn = require('../db/conn')
 const Books = require('../models/books')
 const { query } = require("express")
 module.exports = class BooksControllers{
+
     // busca todos os livros no arquivo ou no banco de dados
     static getBooks(req, res){
         try{
@@ -16,7 +17,7 @@ module.exports = class BooksControllers{
                     res.status(500).send(error.message)
                 }
                 let books = data                
-                res.send(livros)
+                res.send(books)
             })            
         }catch(error){
             res.status(500).send(error.message)
@@ -51,6 +52,9 @@ module.exports = class BooksControllers{
             res.status(500).send(error.message)
         }
     }
+
+    
+
     // inserção de livros em aruqivos e banco de dados
     static postBooks(req,res){
         try{

@@ -1,7 +1,7 @@
 const { json } = require('express')
 const conn = require('../db/conn')
 const fs = require('fs')
-const { deleteBooks } = require('../controllers/booksControllers')
+
 
 module.exports = class Books{
 
@@ -16,6 +16,7 @@ module.exports = class Books{
         const livroFiltrado = livros.filter((livro) => livro.id === id)
         return livroFiltrado
     }
+
     
     //buscar todos os arquivos no banco de dados
     static getBooksAllMysql(){

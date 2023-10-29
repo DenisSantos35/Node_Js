@@ -12,6 +12,7 @@ const BooksControllers = require('../controllers/booksControllers')
 
 //rota para pegar todos os livros
 router.get('/', BooksControllers.getBooks)
+
 //rota para pegar um unico livro 
 router.get('/:id', BooksControllers.getBooksOne)
 //rota para insercao de livros
