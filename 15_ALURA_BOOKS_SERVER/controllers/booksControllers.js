@@ -3,7 +3,6 @@ const conn = require('../db/conn')
 const Books = require('../models/books')
 const { query } = require("express")
 module.exports = class BooksControllers{
-
     // busca todos os livros no arquivo ou no banco de dados
     static getBooks(req, res){
         try{
